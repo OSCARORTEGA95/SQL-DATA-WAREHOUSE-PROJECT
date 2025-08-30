@@ -17,10 +17,10 @@ USE master;
 GO
 
 -- Drop and recreate the 'Data_Warehouse' database
-IF EXIST (SELECT 1 FROM sys.databases WHERE name= 'Data_Warehouse')
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name= 'Data_Warehouse')
 BEGIN
     ALTER DATABASE Data_Warehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-    CROP DATABASE Data_Warehouse;
+    DROP DATABASE Data_Warehouse;
 END;
 GO
 
